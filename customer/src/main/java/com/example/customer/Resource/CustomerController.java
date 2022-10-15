@@ -14,18 +14,19 @@ import com.example.customer.model.Customer;
 import com.example.customer.repository.CustomerRepository;
 
 @RestController
+@RequestMapping("/customers")
 @CrossOrigin(origins = "http://localhost:4200")
 public class CustomerController {
 	
 	@Autowired
 	private CustomerRepository customerRepository;
 
-    @GetMapping("/customers")
+    @GetMapping("/users")
     public List<Customer> getCustomers() {
         return (List<Customer>) customerRepository.findAll();
     }
 
-    @PostMapping(value = "/customers", consumes = "application/json")
+    @PostMapping(value = "/add", consumes = "application/json")
     void addCustomer(@RequestBody Customer customer) {
     	customerRepository.save(customer);
     }

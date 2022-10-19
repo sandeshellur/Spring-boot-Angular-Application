@@ -12,10 +12,3 @@ public class CustomerApplication {
 	}
 
 }
-
-/*.subscribe(result => this.gotoList());
-}
-
-gotoList() {
-  this.router.navigate(['/get']);
-}*/
